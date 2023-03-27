@@ -1,5 +1,5 @@
 var debounce = require('lodash.debounce');
-import Notiflix from 'notiflix';
+import Notiflix from './notiflix';
 import './css/styles.css';
 import { fetchCountries } from './fetchCountries';
 
