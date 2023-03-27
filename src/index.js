@@ -30,7 +30,6 @@ function getCityNameFromInput(event) {
 
   if (countryName === '') {
     resetMarkup();
-
     return;
   }
 }
