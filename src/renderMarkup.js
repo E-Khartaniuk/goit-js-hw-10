@@ -1,5 +1,3 @@
-// import { countryList, countryInfo } from './index';
-
 export let countryList = document.querySelector('.country-list');
 export let countryInfo = document.querySelector('.country-info');
 
