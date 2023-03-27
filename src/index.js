@@ -1,5 +1,5 @@
 var debounce = require('lodash.debounce');
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import Notiflix from 'notiflix';
 import './css/styles.css';
 import { fetchCountries } from './fetchCountries';
 
@@ -25,7 +25,7 @@ function getCityNameFromInput(event) {
     .then(createMarkup)
     .catch(() => {
       resetMarkup();
-      Notify.failure('Oops, there is no country with that name');
+      Notiflix.Notify.failure('Oops, there is no country with that name');
     });
 
   if (countryName === '') {
@@ -48,7 +48,7 @@ function createMarkup(country) {
     return createCountryCard(country);
   } else if (country.length > 10) {
     resetMarkup();
-    Notify.warning(
+    Notiflix.Notify.warning(
       'Too many matches found. Please enter a more specific name.'
     );
   }
