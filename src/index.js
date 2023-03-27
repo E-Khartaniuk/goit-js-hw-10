@@ -51,4 +51,3 @@ function createMarkup(country) {
     );
   }
 }
-console.log(inputEl);
