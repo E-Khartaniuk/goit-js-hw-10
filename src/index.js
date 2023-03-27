@@ -53,4 +53,4 @@ function createMarkup(country) {
     );
   }
 }
-console.log(inputEl);
+console.log(document);
