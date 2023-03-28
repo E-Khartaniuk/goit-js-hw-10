@@ -19,26 +19,22 @@ inputEl.addEventListener(
 
 function getCityNameFromInput(event) {
   const countryName = inputEl.value.trim();
-
-  fetchCountries(countryName)
-    .then(createMarkup)
-    .catch(() => {
-      resetMarkup();
-      Notify.failure('Oops, there is no country with that name');
-    });
-
   if (countryName === '') {
     resetMarkup();
     return;
-  }
+  } else
+    fetchCountries(countryName)
+      .then(createMarkup)
+      .catch(() => {
+        resetMarkup();
+        Notify.failure('Oops, there is no country with that name');
+      });
 }
 
 function createMarkup(country) {
   if (!country) {
     return;
-  }
-
-  if (country.length <= 10 && country.length > 1) {
+  } else if (country.length <= 10 && country.length > 1) {
     resetMarkup();
     return createMarkupList(country);
   } else if (country.length === 1) {
